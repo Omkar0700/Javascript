@@ -1,0 +1,48 @@
+<html >
+
+<body>
+    <p>Use the "extends" keyword to inherit all methods from another class.</p>
+    <p id="demo"></p>
+    <script>
+        class student{
+    constructor(name){
+        this.fname=name;
+    }
+    n(){
+        return 'Student :'+ this.fname;
+    }
+    }
+    class test extends student{
+    constructor(name,M1,M2,M3,M4,M5){
+        super(name);
+        this.m1=M1;
+        this.m2=M2;
+        this.m3=M3;
+        this.m4=M4;
+        this.m5=M5;
+
+    }
+    average(){
+        var s=this.m1+this.m2+this.m3+this.m4+this.m5;
+        return this.n()+' has '+ s + ' Marks ';
+    
+    }
+    }
+    class extra extends test{
+    constructor(name,M1,M2,M3,M4,M5,aci){
+        super(name,M1,M2,M3,M4,M5);
+        
+        this.activity=aci;
+    }
+    o(){
+        var i=this.activity;
+        return this.average() +' + '+ i + ' Marks for Extra activity';
+    }
+    }
+    let dis=new extra("Omkar",1,2,3,4,5,5)
+    document.getElementById("demo").innerHTML = dis.o();
+
+    </script>
+    
+</body>
+</html>
